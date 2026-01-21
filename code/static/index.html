@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Multi-Tool Assistant</title>
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+
+    <nav class="taskbar">
+        <div class="logo">AI Suite</div>
+        <button onclick="showSection('chatbot')">💬 Chat Bot</button>
+        <button onclick="showSection('assistant')">🤖 AI Assistant</button>
+        <button onclick="showSection('code')">Code Assistant</button>
+        <button onclick="showSection('legal')">Legal Analyzer</button>
+        <button onclick="showSection('summarizer')">Text Summarizer</button>
+        <button onclick="showSection('news')">News Extraction</button>
+        <button onclick="showSection('ecommerce')">E-Commerce</button>
+        <button onclick="showSection('medical')" class="danger-btn">Medical AI</button>
+    </nav>
+
+    <div class="container">
+        
+        <section id="chatbot" class="tool-section active">
+            <h2>Chat Bot Companion</h2>
+            <div class="chat-window" id="chatbot_window">
+                <div class="message ai-msg">Hello! I'm your friendly Chat Bot. What's on your mind?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatbot_input" placeholder="Type a message..." onkeypress="handleEnter(event, 'chatbot')">
+                <button onclick="handleChatBot()">Send</button>
+            </div>
+        </section>
+
+        <section id="assistant" class="tool-section" style="display:none;">
+            <h2>General AI Assistant</h2>
+            <div class="chat-window" id="assistant_window">
+                <div class="message ai-msg">Greetings. I am your Virtual Assistant. How can I help you be productive today?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="assistant_input" placeholder="Ask for help with a task..." onkeypress="handleEnter(event, 'assistant')">
+                <button onclick="handleAIAssistant()">Send</button>
+            </div>
+        </section>
+
+        <section id="code" class="tool-section" style="display:none;">
+            <h2>Code Assistant</h2>
+            <div class="controls">
+                <label>Mode:</label>
+                <select id="code_mode">
+                    <option value="generator">Code Generator</option>
+                    <option value="debugger">Debugger</option>
+                </select>
+            </div>
+            <textarea id="code_input" placeholder="Describe your code..."></textarea>
+            <button onclick="handleCode()">Run Assistant</button>
+            <div class="output-box" id="code_output"></div>
+        </section>
+
+        <section id="legal" class="tool-section" style="display:none;">
+            <h2>Legal Analyzer</h2>
+            <textarea id="legal_input" placeholder="Paste legal document here..."></textarea>
+            <button onclick="handleLegal()">Analyze Document</button>
+            <div class="output-box" id="legal_output"></div>
+        </section>
+
+        <section id="summarizer" class="tool-section" style="display:none;">
+            <h2>Text Summarizer</h2>
+            <textarea id="sum_input" placeholder="Paste text to summarize..."></textarea>
+            <button onclick="handleSummarize()">Summarize</button>
+            <div class="output-box" id="sum_output"></div>
+        </section>
+
+        <section id="news" class="tool-section" style="display:none;">
+            <h2>News Summarizer</h2>
+            <textarea id="news_input" placeholder="Paste news article text..."></textarea>
+            <button onclick="handleNews()">Extract & Summarize</button>
+            <div class="results-split">
+                <div class="box">
+                    <h3>Extraction</h3>
+                    <div id="news_facts"></div>
+                </div>
+                <div class="box">
+                    <h3>Summary</h3>
+                    <div id="news_summary"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecommerce" class="tool-section" style="display:none;">
+            <h2>Product Recommendation</h2>
+            <input type="text" id="ecom_query" placeholder="What are you looking for?">
+            <div class="controls">
+                <input type="number" id="ecom_min" placeholder="Min $">
+                <input type="number" id="ecom_max" placeholder="Max $">
+                <select id="ecom_rating">
+                    <option value="3">3+ Stars</option>
+                    <option value="4">4+ Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+            <button onclick="handleEcommerce()">Find Products</button>
+            <div class="output-box" id="ecom_output"></div>
+        </section>
+
+        <section id="medical" class="tool-section" style="display:none;">
+            <h2>Medical Symptom Checker</h2>
+            <p class="warning">⚠️ This tool is for educational purposes only. Consult a doctor.</p>
+            <textarea id="med_input" placeholder="List your symptoms..."></textarea>
+            <button onclick="handleMedical()">Analyze Symptoms</button>
+            <div class="output-box" id="med_output"></div>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
