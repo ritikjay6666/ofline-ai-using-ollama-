@@ -65,7 +65,7 @@ Clone the repository
 
 Bash
 
-git clone https://github.com/ritikjay6666/ai-suite.git
+git clone https://github.com/ritikjay6666/ofline-ai-using-ollama-
 cd ai-suite
 Install Python Dependencies Create a requirements.txt file (or install manually):
 
