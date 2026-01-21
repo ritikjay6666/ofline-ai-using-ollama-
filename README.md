@@ -40,14 +40,14 @@ Ensure your repository is organized as follows for the code to run correctly:
 
 /
 
-├── requirements.txt      # Python dependencies
+├── requirements.txt       # Python dependencies
 ├── code
-    ├── app.py                # Main FastAPI application
-    ├── static/               # Static assets folder
-│      ├── index.html        # Main frontend UI
-│      ├── style1.css        # CSS styling
-│      └── script.js         # Frontend logic
-└── README.md             # Project documentation
+    ├── app.py             # Main FastAPI application
+    ├── static/            # Static assets folder
+│      ├── index.html      # Main frontend UI
+│      ├── style1.css      # CSS styling
+│      └── script.js       # Frontend logic
+└── README.md              # Project documentation
 ⚙️ Prerequisites
 Before running the project, ensure you have the following installed:
 
@@ -65,7 +65,7 @@ Clone the repository
 
 Bash
 
-git clone https://github.com/your-username/ai-suite.git
+git clone https://github.com/ritikjay6666/ai-suite.git
 cd ai-suite
 Install Python Dependencies Create a requirements.txt file (or install manually):
 
